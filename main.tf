@@ -38,7 +38,7 @@ resource "tfe_registry_module" "terraform-tfe-workspace" {
 
 module "corp_it_dev_workspace" {
   source  = "app.terraform.io/mjh-demo/workspace/tfe"
-  version = "0.0.2"
+  version = "0.0.3"
 
   use_case_name          = "corp_it"
   org                    = var.org
@@ -58,7 +58,7 @@ module "corp_it_dev_workspace" {
 
 module "research_dev_workspace" {
   source  = "app.terraform.io/mjh-demo/workspace/tfe"
-  version = "0.0.2"
+  version = "0.0.3"
 
   use_case_name          = "research"
   org                    = var.org
@@ -78,7 +78,7 @@ module "research_dev_workspace" {
 
 module "finance_dev_workspace" {
   source  = "app.terraform.io/mjh-demo/workspace/tfe"
-  version = "0.0.2"
+  version = "0.0.3"
 
   use_case_name          = "finance"
   org                    = var.org
@@ -98,7 +98,7 @@ module "finance_dev_workspace" {
 
 module "mfg_dev_workspace" {
   source  = "app.terraform.io/mjh-demo/workspace/tfe"
-  version = "0.0.2"
+  version = "0.0.3"
 
   use_case_name          = "manufacturing"
   org                    = var.org
