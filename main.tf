@@ -96,22 +96,22 @@ module "finance_dev_workspace" {
   environment            = "dev"
 }
 
-# module "mfg_dev_workspace" {
-#   source  = "app.terraform.io/mjh-demo/workspace/tfe"
-#   version = "0.0.3"
+module "mfg_dev_workspace" {
+  source  = "app.terraform.io/mjh-demo/workspace/tfe"
+  version = "0.0.3"
 
-#   use_case_name          = "manufacturing"
-#   org                    = var.org
-#   vcs_identifier         = var.vcs_identifier
-#   oauth_token            = var.oauth_token
-#   aws_access_key         = var.aws_access_key
-#   aws_secret_key         = var.aws_secret_key
-#   arm_client_id          = var.arm_client_id
-#   arm_client_secret      = var.arm_client_secret
-#   arm_tenant_id          = var.arm_tenant_id
-#   arm_subscription_id    = var.arm_subscription_id
-#   creator_workspace      = var.creator_workspace
-#   tfe_team_developers_id = tfe_team.developers.id
-#   tfe_team_ops_id        = tfe_team.ops.id
-#   environment            = "dev"
-# }
+  use_case_name          = "manufacturing"
+  org                    = var.org
+  vcs_identifier         = var.vcs_identifier
+  oauth_token            = var.oauth_token
+  aws_access_key         = var.aws_access_key
+  aws_secret_key         = var.aws_secret_key
+  arm_client_id          = var.arm_client_id
+  arm_client_secret      = var.arm_client_secret
+  arm_tenant_id          = var.arm_tenant_id
+  arm_subscription_id    = var.arm_subscription_id
+  creator_workspace      = var.creator_workspace
+  tfe_team_developers_id = tfe_team.developers.id
+  tfe_team_ops_id        = tfe_team.ops.id
+  environment            = "dev"
+}
