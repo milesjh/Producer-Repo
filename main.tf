@@ -36,20 +36,6 @@ resource "tfe_registry_module" "terraform-tfe-workspace" {
   }
 }
 
-resource "tfe_policy_set" "sentinel-demo" {
-  name         = "sentinel-demo"
-  description  = "A brand new policy set"
-  organization = "mjh-demo"
-  global       = true
-
-  vcs_repo {
-    identifier         = "milesjh/sentinel-demo"
-    branch             = "main"
-    ingress_submodules = false
-    oauth_token_id     = var.oauth_token
-  }
-}
-
 # module "corp_it_dev_workspace" {
 #   source = "./modules/workspace"
 
