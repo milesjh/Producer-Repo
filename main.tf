@@ -1,40 +1,40 @@
-# resource "tfe_organization_membership" "developers" {
-#   organization = var.org
-#   email        = "harrison.milesj+developer@gmail.com"
-# }
+resource "tfe_organization_membership" "developer" {
+  organization = var.org
+  email        = "harrison.milesj+developer@gmail.com"
+}
 
-# resource "tfe_team_organization_member" "developer" {
-#   team_id                    = tfe_team.developers.id
-#   organization_membership_id = tfe_organization_membership.developers.id
-# }
+resource "tfe_team" "developers" {
+  name         = "developers"
+  organization = var.org
+}
 
-# resource "tfe_team" "developers" {
-#   name         = "developers"
-#   organization = var.org
-# }
+resource "tfe_team_organization_member" "developer" {
+  team_id                    = tfe_team.developers.id
+  organization_membership_id = tfe_organization_membership.developer.id
+}
 
-# resource "tfe_organization_membership" "ops" {
-#   organization = var.org
-#   email        = "harrison.milesj+operator@gmail.com"
-# }
+resource "tfe_organization_membership" "ops" {
+  organization = var.org
+  email        = "harrison.milesj+operator@gmail.com"
+}
 
-# resource "tfe_team_organization_member" "operator" {
-#   team_id                    = tfe_team.ops.id
-#   organization_membership_id = tfe_organization_membership.ops.id
-# }
+resource "tfe_team" "ops" {
+  name         = "ops"
+  organization = var.org
+}
 
-# resource "tfe_team" "ops" {
-#   name         = "ops"
-#   organization = var.org
-# }
+resource "tfe_team_organization_member" "operator" {
+  team_id                    = tfe_team.ops.id
+  organization_membership_id = tfe_organization_membership.ops.id
+}
 
-# resource "tfe_registry_module" "terraform-tfe-workspace" {
-#   vcs_repo {
-#     display_identifier = "milesjh/terraform-tfe-workspace"
-#     identifier         = "milesjh/terraform-tfe-workspace"
-#     oauth_token_id     = var.oauth_token
-#   }
-# }
+resource "tfe_registry_module" "terraform-tfe-workspace" {
+  vcs_repo {
+    display_identifier = "milesjh/terraform-tfe-workspace"
+    identifier         = "milesjh/terraform-tfe-workspace"
+    oauth_token_id     = var.oauth_token
+  }
+}
 
 # module "corp_it_dev_workspace" {
 #   source  = "app.terraform.io/mjh-demo/workspace/tfe"
