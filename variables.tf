@@ -22,3 +22,5 @@ variable "aws_access_key" {}
 variable "aws_secret_key" {}
 
 variable "creator_workspace" {}
+variable "gh_token" {}
+variable "tfe_token" {}
