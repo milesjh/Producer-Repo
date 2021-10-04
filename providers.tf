@@ -17,6 +17,10 @@ terraform {
       version = "~>2.79.0"
     }
   }
+  backend "remote" {
+    hostname     = "app.terraform.io"
+    organization = "mjh-demo"
+  }
 }
 
 provider "github" {
